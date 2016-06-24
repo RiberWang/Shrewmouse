@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>name</key>
+		<string>GameBG01.png</string>
+		<key>rect</key>
+		<string>{{0, 0}, {320, 227}}</string>
+		<key>order</key>
+		<integer>0</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>GameBG02.png</string>
+		<key>rect</key>
+		<string>{{0, 190}, {320, 124}}
+        </string>
+		<key>order</key>
+		<integer>1</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>GameBG03.png</string>
+		<key>rect</key>
+		<string>{{0, 277}, {320, 123}}</string>
+		<key>order</key>
+		<integer>2</integer>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>GameBG04.png</string>
+		<key>rect</key>
+		<string>{{0, 364}, {320, 116}}</string>
+		<key>order</key>
+		<integer>3</integer>
+	</dict>
+</array>
+</plist>
