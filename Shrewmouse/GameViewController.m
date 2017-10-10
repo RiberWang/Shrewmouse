@@ -101,7 +101,7 @@ extern int score;
 - (void)initMusicSwitchAndGrade {
     
     // 创建音乐开关
-    UILabel *labelName = [[UILabel alloc] initWithFrame:CGRectMake(WindowSize.width-120, 25, 60, 40)];
+    UILabel *labelName = [[UILabel alloc] initWithFrame:CGRectMake(WindowSize.width-120, 25, 70, 40)];
     labelName.text = @"背景音乐";
     labelName.font = [UIFont systemFontOfSize:15 weight:15];
     
@@ -331,6 +331,7 @@ extern int score;
         
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:frame];
         imageView.image = [UIImage imageNamed:name];
+        imageView.tag = 200 + order;
         [self.view addSubview:imageView];
     }
     
