@@ -14,6 +14,7 @@
 #define WindowSize [UIScreen mainScreen].bounds.size
 #define SystemVersion [[[UIDevice currentDevice] systemVersion] doubleValue]
 #define FRAME_TIMER_BAR CGRectMake(95, 443, 200, 18)//时间条
+#define RGBA(R, G, B, A) [UIColor colorWithRed:(R/255.0) green:(G/255.0) blue:(B/255.0) alpha:(A)]
 
 extern int score;
 
@@ -144,7 +145,10 @@ extern int score;
         
         // 6p 6sp
         else if (WindowSize.height == 736) {
-            mouse = [[MouseButton alloc] initWithFrame:CGRectMake(33+133*(i%3), 285+125*(i/3), 79, 56)];
+            mouse = [[MouseButton alloc] initWithFrame:CGRectMake(35+133*(i%3), 285+125*(i/3), 79, 56)];
+            
+            mouse.frame = CGRectMake(35+132*(i%3), 285+135*(i/3), 79, 56);
+
         }
         
         UIImageView *imageView = (UIImageView *)[self.view viewWithTag:201+i/3];
@@ -326,21 +330,20 @@ extern int score;
         }
         
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:frame];
-        imageView.tag = 200 + order;
         imageView.image = [UIImage imageNamed:name];
         [self.view addSubview:imageView];
     }
     
     // 创建开始按钮
     _startButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    _startButton.frame = CGRectMake((WindowSize.width-200)/2, WindowSize.height-200, 200, 60);
-    _startButton.backgroundColor = [UIColor darkGrayColor];
+    _startButton.frame = CGRectMake((WindowSize.width-200)/2, WindowSize.height-200, 200, 44);
+    _startButton.backgroundColor = RGBA(138, 161, 15, 1);
     _startButton.alpha = 0.8;
     _startButton.layer.cornerRadius = 10;
     _startButton.titleLabel.textAlignment = NSTextAlignmentCenter;
     [_startButton setTitle:@"开 始" forState:UIControlStateNormal];
-    [_startButton setTitleColor:[UIColor greenColor] forState:UIControlStateNormal];
-    _startButton.titleLabel.font = [UIFont systemFontOfSize:40];
+    [_startButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    _startButton.titleLabel.font = [UIFont systemFontOfSize:30];
     _startButton.hidden = YES;
     [_startButton addTarget:self action:@selector(gameAgain:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_startButton];
@@ -394,12 +397,10 @@ extern int score;
     else if (WindowSize.height == 568) {
         frame = CGRectMake(95, 540, 200, 20);
     }
-    
     // 6 6s
     else if (WindowSize.height == 667) {
         frame = CGRectMake(110, 590, 234, 22);
     }
-    
     // 6p 6sp
     else if (WindowSize.height == 736) {
         frame = CGRectMake(122, 634, 261, 27);
@@ -425,12 +426,10 @@ extern int score;
         else if (WindowSize.height == 568) {
             mouse.frame = CGRectMake(23+100*(i%3), 260+110*(i/3), 79, 56);
         }
-        
         // 6 6s
         else if (WindowSize.height == 667) {
             mouse.frame =CGRectMake(33+120*(i%3), 273+130*(i/3), 79, 56);
         }
-        
         // 6p 6sp
         else if (WindowSize.height == 736) {
             mouse.frame = CGRectMake(35+132*(i%3), 285+135*(i/3), 79, 56);
