@@ -349,7 +349,7 @@
 				TargetAttributes = {
 					0706855F1CBFDB4B00C57D86 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 5JXFMNNBPL;
+						DevelopmentTeam = 9P3PWY83WN;
 					};
 					070685781CBFDB4B00C57D86 = {
 						CreatedOnToolsVersion = 7.2;
@@ -595,10 +595,11 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 9P3PWY83WN;
 				INFOPLIST_FILE = Shrewmouse/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.RiberWang.holder.Shrewmouse;
+				PRODUCT_BUNDLE_IDENTIFIER = com.riber.holder.Shrewmouse;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -611,10 +612,11 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 9P3PWY83WN;
 				INFOPLIST_FILE = Shrewmouse/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.RiberWang.holder.Shrewmouse;
+				PRODUCT_BUNDLE_IDENTIFIER = com.riber.holder.Shrewmouse;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

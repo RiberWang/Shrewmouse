@@ -15,6 +15,8 @@
 #define SystemVersion [[[UIDevice currentDevice] systemVersion] doubleValue]
 #define FRAME_TIMER_BAR CGRectMake(95, 443, 200, 18)//时间条
 #define RGBA(R, G, B, A) [UIColor colorWithRed:(R/255.0) green:(G/255.0) blue:(B/255.0) alpha:(A)]
+// 状态栏高度
+#define StatusHeight [UIApplication sharedApplication].statusBarFrame.size.height
 
 extern int score;
 
@@ -101,14 +103,14 @@ extern int score;
 - (void)initMusicSwitchAndGrade {
     
     // 创建音乐开关
-    UILabel *labelName = [[UILabel alloc] initWithFrame:CGRectMake(WindowSize.width-120, 25, 70, 40)];
+    UILabel *labelName = [[UILabel alloc] initWithFrame:CGRectMake(WindowSize.width-120, StatusHeight + 10, 70, 30)];
     labelName.text = @"背景音乐";
     labelName.font = [UIFont systemFontOfSize:15 weight:15];
     
     labelName.textColor = [UIColor whiteColor];
     [self.view addSubview:labelName];
     
-    UISwitch *mySwitch = [[UISwitch alloc] initWithFrame:CGRectMake(WindowSize.width-50, 30, 40, 30)];
+    UISwitch *mySwitch = [[UISwitch alloc] initWithFrame:CGRectMake(WindowSize.width-50, StatusHeight + 10, 40, 30)];
     [mySwitch addTarget:self action:@selector(switchOn:) forControlEvents:UIControlEventValueChanged];
     [mySwitch setOn:YES];
     mySwitch.thumbTintColor = [UIColor whiteColor];
@@ -116,9 +118,10 @@ extern int score;
     [self.view addSubview:mySwitch];
     
     // 显示得分
-    _gradeLabel = [[UILabel alloc] initWithFrame:CGRectMake((WindowSize.width-100)/2.0, 40, 100, 60)];
+    _gradeLabel = [[UILabel alloc] initWithFrame:CGRectMake((WindowSize.width-100)/2.0, StatusHeight + 10, 100, 60)];
     _gradeLabel.text = @"得分:  0";
     _gradeLabel.textAlignment = NSTextAlignmentCenter;
+    _gradeLabel.textColor = [UIColor greenColor];
     [self.view addSubview:_gradeLabel];
 }
 
@@ -149,6 +152,11 @@ extern int score;
             
             mouse.frame = CGRectMake(35+132*(i%3), 285+135*(i/3), 79, 56);
 
+        }
+        else {
+            mouse = [[MouseButton alloc] initWithFrame:CGRectMake(35+133*(i%3), 285+125*(i/3), 79, 56)];
+            
+            mouse.frame = CGRectMake(35+132*(i%3), 285+135*(i/3), 79, 56);
         }
         
         UIImageView *imageView = (UIImageView *)[self.view viewWithTag:201+i/3];
@@ -211,6 +219,9 @@ extern int score;
     else if (WindowSize.height == 736) {
         frame = CGRectMake(122, 634, 261, 27);
     }
+    else {
+        frame = CGRectMake(122, 634, 261, 27);
+    }
     
     UIView *redView = [[UIView alloc] initWithFrame:frame];
     redView.tag = 10000;
@@ -229,22 +240,22 @@ extern int score;
 
     if (width > 0)
     {
-        if (WindowSize.height == 480) {
-            width -= 1;
-        }
         // 5 5s
-        else if (WindowSize.height == 568) {
+        if (WindowSize.height == 320) {
             width -= 1;
         }
         
         // 6 6s
-        else if (WindowSize.height == 667) {
+        else if (WindowSize.height == 375) {
             width -= 2;
         }
         
         // 6p 6sp
-        else if (WindowSize.height == 736) {
+        else if (WindowSize.height == 414) {
             width -= 3;
+        }
+        else {
+            
         }
     }
     
@@ -327,6 +338,10 @@ extern int score;
             if (order == 3) {
                 frame.size.height = frame.size.height+45;
             }
+        }
+        else {
+            orginY += frame.size.height-48;
+                frame.size.height = frame.size.height+45;
         }
         
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:frame];
